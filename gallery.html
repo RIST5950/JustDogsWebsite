@@ -1,22 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
  <head>
-<title> gallery </title> 
-<link rel="stylesheet" href="Css/SSheet3.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://unpkg.com; style-src 'self' https://unpkg.com 'unsafe-inline'; img-src 'self' data:; connect-src 'self' https://*.tile.openstreetmap.org; base-uri 'self';">
+    <title>Grooming Gallery - Just Dogs Grooming Parlour</title>
+    <meta name="description" content="Browse the grooming gallery for Just Dogs Grooming Parlour in Glenanda, showcasing pet styling and grooming transformations.">
+    <link rel="stylesheet" href="Css/SSheet3.css">
 </head>   
 <body style="background-color: color-mix(in srgb-linear, black 25%, white 75%);">
- <header align="center"> <img src = " Images/JPGP.jpg" width="150" height="150">
+ <header align="center"> <img src = " Images/JPGP.jpg" width="150" height="150" alt="Just Dogs Grooming Parlour logo">
            <nav>
             <ul>
                 <a href="home.html"> Home:|</a>
                 <a href="about.html"> About Us:|</a>
                 <a href="gallery.html"> Gallery:|</a>
                 <a href="product.html"> Products:|</a>
+                <a href="updates.html"> Updates:|</a>
                 <a href="contact.html"> Contact Us:|</a>
-            <ul></ul> 
+            </ul>
           
         </header>
 <main>
+        <h1 style="text-align:center; margin-top:24px;">Grooming Gallery</h1>
+        <p style="text-align:center; max-width:760px; margin:0 auto 24px;">See our latest pet grooming work, then explore our <a href="product.html">products</a> or <a href="updates.html">news</a>.</p>
     <div class="text-card1">
     <table border="1" align="center">
                        <tr width="100px" height="50px">
@@ -28,18 +36,35 @@
                         <th>Gallery:</th>
                          </tr></table></h2> </div> 
                           
-  <img src = " images/D1.jpg" width="500" height="500" >
-   <img src = " images/D2.jpg" width="650" height="500">
-    <img src = " images/D3.jpg" width="715" height="500">
-     <img src = " images/D4.jpg" width="500" height="500">
-      <img src = " images/D5.jpg" width="750" height="500">
-      <img src = " images/D.jpg" width="400" height="400">
-     <img src = " images/D6.jpg" width="915" height="500">
-     <img src = " images/D.jpg" width="250" height="500">
-    <main>
+  <div class="carousel-container">
+    <div class="carousel">
+      <button class="carousel-button prev" type="button">‹</button>
+      <div class="carousel-track-container">
+        <ul class="carousel-track">
+          <li class="carousel-slide current-slide"><a href="Images/D1.jpg" class="gallery-link"><img src="Images/D1.jpg" alt="Grooming image 1" loading="lazy"></a></li>
+          <li class="carousel-slide"><a href="Images/D2.jpg" class="gallery-link"><img src="Images/D2.jpg" alt="Grooming image 2" loading="lazy"></a></li>
+          <li class="carousel-slide"><a href="Images/D3.jpg" class="gallery-link"><img src="Images/D3.jpg" alt="Grooming image 3" loading="lazy"></a></li>
+          <li class="carousel-slide"><a href="Images/D4.jpg" class="gallery-link"><img src="Images/D4.jpg" alt="Grooming image 4" loading="lazy"></a></li>
+          <li class="carousel-slide"><a href="Images/D5.jpg" class="gallery-link"><img src="Images/D5.jpg" alt="Grooming image 5" loading="lazy"></a></li>
+          <li class="carousel-slide"><a href="Images/D6.jpg" class="gallery-link"><img src="Images/D6.jpg" alt="Grooming image 6" loading="lazy"></a></li>
+        </ul>
+      </div>
+      <button class="carousel-button next" type="button">›</button>
+    </div>
+    <div class="carousel-nav"></div>
+  </div>
+  <div id="lightbox" class="lightbox">
+    <div class="lightbox-content">
+      <button class="lightbox-close" type="button">×</button>
+      <img src="" alt="" />
+      <div class="lightbox-caption"></div>
+    </div>
+  </div>
+    </main>
         <hr>
-        <footer>
+        <footer style="text-align:center;">
              &copy;ST10515950
         </footer>
+        <script src="Js/Website.js" defer></script>
     </body>
 </html>

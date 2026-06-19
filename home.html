@@ -1,19 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Home</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://unpkg.com; style-src 'self' https://unpkg.com 'unsafe-inline'; img-src 'self' data:; connect-src 'self' https://*.tile.openstreetmap.org; base-uri 'self';">
+        <title>Just Dogs Grooming Parlour - Home</title>
+        <meta name="description" content="Just Dogs Grooming Parlour in Glenanda offers expert dog grooming, premium pet products, and caring service for all breeds.">
         <link rel="stylesheet" href="Css/SSheet1.css">
     </head>
     
        
         <header class="HPHD1"> 
-            <img src = " Images/JPGP.jpg" width="150" height="150">
+            <img src = " Images/JPGP.jpg" width="150" height="150" alt="Just Dogs Grooming Parlour logo" loading="lazy">
            <nav>
             <ul>
                 <a href="home.html"> Home:|</a>
                 <a href="about.html"> About Us:|</a>
                 <a href="gallery.html"> Gallery:|</a>
                 <a href="product.html"> Products:|</a>
+                <a href="updates.html"> Updates:|</a>
                 <a href="contact.html"> Contact Us:|</a>
             </ul>
 
@@ -22,9 +28,7 @@
         </header>
         <main>
             
-            <h1 class="HPH1">
-                <u> BIT_GR1_Just Dogs</u>
-            </h1>
+            <h1 class="HPH1">Just Dogs Grooming Parlour</h1>
             <div class="text-card0">
             <table border="1" align="center">
                        <tr width="100px" height="50px">
@@ -35,17 +39,29 @@
                 <source scr="Images/download.mp4">
             </video> -->
           <div class="text-card">
-           
-            <h2 class="HPh2">This is a dog parlour offering an elite grooming service to all breeds. We also offer trendy dog 
-         clothing, toys, Treats, beds and more.</h2> 
+            <div class="accordion">
+                  <div> (Click on headings to learn more about The Parlour and Why Choose Us.)</div><br> <br>
+              <div class="accordion-item">
+                <h3 class="accordion-header">The Parlour</h3>
+                <div class="accordion-content"><p>This is a dog parlour offering an elite grooming service to all breeds. We also offer trendy dog clothing, toys, Treats, beds and more.</p></div>
+              </div>
+              <br>
+              <div class="accordion-item">
+                <h3 class="accordion-header">Why Choose Us</h3>
+                <div class="accordion-content"><p>We focus on expert grooming, comfort, and friendly care so every pet leaves happy and healthy.</p></div>
+              </div>
+            </div>
           </div>
+          <p style="text-align:center; margin: 24px auto; max-width: 720px;">
+            Discover our <a href="product.html">pet products</a>, <a href="gallery.html">grooming gallery</a>, and <a href="updates.html">latest updates</a>.
+          </p>
          <hr>
-         <img src = "Images/D10.jpg" width="650" height="500" alt="A picture from the businesses instagram">
+         <img src = "Images/D10.jpg" width="650" height="500" alt="Dog grooming service example at Just Dogs Grooming Parlour">
          <hr>
         </main>
-        <footer>
+        <footer style="text-align:center;">
             &copy;ST10515950
         </footer>
-        
+        <script src="Js/Website.js" defer></script>
     </body>
 </html>

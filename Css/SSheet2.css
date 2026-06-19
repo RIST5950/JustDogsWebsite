@@ -1,30 +1,46 @@
+/* Global Reset & Typography */
+body {
+    font-family: 'Inter', 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+h1, h2, h3, h4 {
+    font-family: 'Poppins', 'Montserrat', sans-serif;
+    color: #2c3e50;
+}
+p {
+    color: #4a5568;
+}
+
 nav ul{
     list-style: none;
-    padding: 0;
-    margin: 0 auto;
-    background-color: #66d6b671;
+    padding: 8px 16px;
+    margin: 20px auto;
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    border-radius: 50px;
     width: max-content;
     overflow: hidden;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: large;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
 }
 nav a{
-    color:black;
+    color: #4a5568;
     text-decoration: none;
     padding: 10px 20px;
     display: block;
     text-align: center;
     border-radius: 50px;
-    float: center;
-    
+    transition: all 0.3s ease;
 }
 nav a:hover{
-    background-color: #264e4371;
-    color: black;
+    background-color: #245c53;
+    color: #ffffff;
 }
 img[src*="JPGP.jpg"]
 {
@@ -42,7 +58,9 @@ img[src*="JPGP.jpg"]
     justify-content: center;
     text-align: center;
     padding: 20px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0,0,0,0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 .text-card1 {
     position: relative;
@@ -56,7 +74,9 @@ img[src*="JPGP.jpg"]
     justify-content: center;
     text-align: center;
     padding: 20px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0,0,0,0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 .text-card2 {
     position: relative;
@@ -70,7 +90,9 @@ img[src*="JPGP.jpg"]
     justify-content: center;
     text-align: center;
     padding: 20px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0,0,0,0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
     
 }
 .text-card3 {
@@ -85,7 +107,9 @@ img[src*="JPGP.jpg"]
     justify-content: center;
     text-align: center;
     padding: 20px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0,0,0,0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
     
 }
 
@@ -101,7 +125,9 @@ img[src*="JPGP.jpg"]
     justify-content: center;
     text-align: center;
     padding: 20px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0,0,0,0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .text-card5 {
@@ -116,7 +142,9 @@ img[src*="JPGP.jpg"]
     justify-content: center;
     text-align: center;
     padding: 20px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0,0,0,0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .text-card6 {
@@ -131,7 +159,9 @@ img[src*="JPGP.jpg"]
     justify-content: center;
     text-align: center;
     padding: 20px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0,0,0,0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 .text-card7 {
     position: relative;
@@ -145,7 +175,9 @@ img[src*="JPGP.jpg"]
     justify-content: center;
     text-align: center;
     padding: 20px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0,0,0,0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 .text-card8 {
     position: relative;
@@ -159,6 +191,61 @@ img[src*="JPGP.jpg"]
     justify-content: center;
     text-align: center;
     padding: 20px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0,0,0,0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 footer{text-align: center;}
+/* Document Baseline Layout Resets */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f4f6f9;
+}
+
+/* Map Centering Wrapper Box */
+.map-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+h2 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* Leaflet Interactive Viewport Canvas Box Constraint */
+#map {
+    height: 500px;
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Interactive Marker Leaflet Information Popups Formatting */
+.popup-box {
+    font-family: sans-serif; 
+    line-height: 1.4;
+}
+
+.popup-title {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.popup-link {
+    color: #007bff; 
+    text-decoration: none; 
+    font-weight: bold; 
+    display: inline-block; 
+    margin-top: 5px;
+}
+
+.popup-link:hover {
+    text-decoration: underline;
+}
+
+[class^="text-card"]:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+}

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enquiries - Just Dogs Grooming Parlour</title>
+    <link rel="stylesheet" href="Css/SSheet5.css">
+</head>   
+<body style="background-color: color-mix(in srgb-linear, black 25%, white 75%);">
+ <header align="center"> <img src = " Images/JPGP.jpg" width="150" height="150" alt="Just Dogs Grooming Parlour logo">
+           <nav>
+            <ul>
+                <a href="home.html"> Home:|</a>
+                <a href="about.html"> About Us:|</a>
+                <a href="gallery.html"> Gallery:|</a>
+                <a href="product.html"> Products:|</a>
+                <a href="updates.html"> Updates:|</a>
+                <a href="contact.html"> Contact Us:|</a>
+                <a href="enquiry.html"> Enquiry:|</a>
+            </ul>
+            </nav> 
+        </header>
+<main>
+   <h1 style="text-align:center; margin-top:20px;">Enquiries & Quotes</h1>
+   <p style="text-align:center; max-width:760px; margin:0 auto 24px;">Enquire about our grooming services, products, or how to become a volunteer. Get an instant estimate below.</p>
+   
+   <div style="max-width: 600px; margin: 40px auto; padding: 20px; background-color: #f9f9f9; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+        <h2 style="text-align: center;">Enquiry Form</h2>
+        <div id="formMessages" style="text-align: center; margin-bottom: 15px; font-weight: bold; min-height: 20px;"></div>
+        <form id="enquiryForm" onsubmit="processEnquiry(event)">
+            <div style="margin-bottom: 15px;">
+                <label for="name" style="display: block; margin-bottom: 5px;">Full Name:</label>
+                <input type="text" id="enquiryName" name="Name" required style="width: 100%; padding: 8px; box-sizing: border-box;" minlength="2">
+            </div>
+            <div style="margin-bottom: 15px;">
+                <label for="enquiryType" style="display: block; margin-bottom: 5px;">What are you enquiring about?</label>
+                <select id="enquiryType" name="EnquiryType" required style="width: 100%; padding: 8px; box-sizing: border-box;" onchange="updateOptions()">
+                    <option value="">-- Select an option --</option>
+                    <option value="service">Grooming Services</option>
+                    <option value="product">Products</option>
+                    <option value="volunteer">Volunteer/Sponsor</option>
+                </select>
+            </div>
+            
+            <div id="serviceOptions" style="display: none; margin-bottom: 15px;">
+                <label for="serviceDogSize" style="display: block; margin-bottom: 5px;">Dog Size:</label>
+                <select id="serviceDogSize" style="width: 100%; padding: 8px; box-sizing: border-box;">
+                    <option value="small">Small Dog</option>
+                    <option value="medium">Medium Dog</option>
+                    <option value="large">Large Dog</option>
+                </select>
+            </div>
+            
+            <div style="margin-bottom: 15px;">
+                <label for="date" style="display: block; margin-bottom: 5px;">Preferred Date (if applicable):</label>
+                <input type="date" id="enquiryDate" name="Date" style="width: 100%; padding: 8px; box-sizing: border-box;" min="2024-01-01">
+            </div>
+            
+            <div style="text-align: center;">
+                <button type="submit" style="padding: 10px 20px; background-color: #333; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 16px;">Get Details</button>
+            </div>
+        </form>
+        
+        <div id="responseArea" style="margin-top: 20px; padding: 15px; border: 1px solid #ddd; background-color: #eef; display: none; border-radius: 4px;">
+            <h3 style="margin-top:0;">Response:</h3>
+            <p id="responseText"></p>
+        </div>
+    </div>
+
+    <script>
+        function updateOptions() {
+            var type = document.getElementById('enquiryType').value;
+            var serviceOptions = document.getElementById('serviceOptions');
+            if (type === 'service') {
+                serviceOptions.style.display = 'block';
+            } else {
+                serviceOptions.style.display = 'none';
+            }
+        }
+        
+        function processEnquiry(event) {
+            event.preventDefault(); // Prevent form from submitting normally
+            
+            var name = document.getElementById('enquiryName').value.trim();
+            var type = document.getElementById('enquiryType').value;
+            var date = document.getElementById('enquiryDate').value;
+            var formMessages = document.getElementById('formMessages');
+            
+            var responseArea = document.getElementById('responseArea');
+            var responseText = document.getElementById('responseText');
+            
+            formMessages.innerHTML = '';
+            formMessages.style.color = 'red';
+            responseArea.style.display = 'none';
+            
+            // Client-Side Validation
+            if (name.length < 2) {
+                formMessages.innerHTML = "Error: Please enter a valid name (at least 2 characters).";
+                return;
+            }
+            if (!type) {
+                formMessages.innerHTML = "Error: Please select what you are enquiring about.";
+                return;
+            }
+            
+            // Prepare data for AJAX
+            var formData = {
+                name: name,
+                type: type,
+                date: date
+            };
+            
+            if (type === 'service') {
+                formData.size = document.getElementById('serviceDogSize').value;
+            }
+            
+            formMessages.style.color = 'blue';
+            formMessages.innerHTML = "Submitting your enquiry...";
+            
+            // AJAX Form Submission
+            fetch('https://jsonplaceholder.typicode.com/posts', {
+                method: 'POST',
+                body: JSON.stringify(formData),
+                headers: {
+                    'Content-type': 'application/json; charset=UTF-8',
+                },
+            })
+            .then(response => {
+                if(response.ok) {
+                    return response.json();
+                } else {
+                    throw new Error('Network response was not ok');
+                }
+            })
+            .then(json => {
+                formMessages.style.color = 'green';
+                formMessages.innerHTML = "Success! Enquiry submitted.";
+                
+                // Show customized response
+                var responseMsg = "Hello " + name + ", thank you for your enquiry! <br><br>";
+                
+                if (type === 'service') {
+                    var size = formData.size;
+                    var cost = size === 'small' ? 'R150' : (size === 'medium' ? 'R250' : 'R350');
+                    responseMsg += "The estimated cost for grooming a " + size + " dog is " + cost + ". ";
+                    if (date) {
+                        responseMsg += "We will check availability for " + date + " and get back to you shortly.";
+                    } else {
+                        responseMsg += "Please contact us to check available dates.";
+                    }
+                } else if (type === 'product') {
+                    responseMsg += "Our products range from R50 to R500. Please visit our store or check the Products page for current availability.";
+                } else if (type === 'volunteer') {
+                    responseMsg += "We are always looking for passionate volunteers and sponsors! Someone from our team will reach out to you with more information on how you can get involved.";
+                }
+                
+                responseText.innerHTML = responseMsg;
+                responseArea.style.display = 'block';
+                document.getElementById('enquiryForm').reset();
+                updateOptions(); // Reset dependent dropdowns
+            })
+            .catch(err => {
+                formMessages.style.color = 'red';
+                formMessages.innerHTML = "Error: Failed to submit enquiry. Please try again.";
+            });
+        }
+    </script>
+</main>
+<hr>
+<footer style="text-align:center;"> 
+     &copy;ST10515950
+</footer>
+</body>
+</html>
